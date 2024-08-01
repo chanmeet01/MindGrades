@@ -8,31 +8,24 @@ const TopNavBar = () => {
     };
 
     return (
-        <div className=" top-0 left-32 right-0 bg-white text-black p-4 px-24 shadow-md z-10 flex items-center justify-between">
-            <h1 className="text-2xl font-bold font-Satoshi-Variable p-2 left-5">Welcome Rahul!</h1>
-            <nav className="flex items-center space-x-8">
-                <div className="flex items-center space-x-4 border-2 border-spacing-2 border-red-300 rounded-full">
-                    <img src=".\images\fire.png" alt="fire" className="w-6 h-6" />
-                    <span>2</span>
+        <div className="flex items-center justify-between p-4 bg-white shadow-md">
+            <div className="flex items-center">
+                <img src="path_to_logo" alt="Logo" className="w-10 h-10 rounded-full" />
+                <h1 className="ml-4 text-xl font-bold">Welcome Rahul!</h1>
+            </div>
+            <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-1 bg-red-200 rounded-full px-3 py-1">
+                    <span className="text-orange-500">🔥</span>
+                    <span className="text-red-600">2</span>
                 </div>
-                <a href="#explore-community" className="hover:underline border-2 border-blue-700 rounded-full text-blue-700">Explore Community</a>
-                <div className="relative">
-                    <button onClick={toggleDropdown} className="flex items-center space-x-1 hover:underline bg-blue-700 text-white border-2 border-blue-700 rounded-full">
-                        <span>Polity</span>
-                        <svg className={`w-4 h-4 transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    {isDropdownOpen && (
-                        <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 shadow-lg">
-                            <li className="px-4 py-2 hover:bg-gray-100"><a href="#subitem1">Subitem 1</a></li>
-                            <li className="px-4 py-2 hover:bg-gray-100"><a href="#subitem2">Subitem 2</a></li>
-                            <li className="px-4 py-2 hover:bg-gray-100"><a href="#subitem3">Subitem 3</a></li>
-                        </ul>
-                    )}
-                </div>
+                <button className="bg-transparent hover:bg-blue-100 text-blue-700 font-semibold py-2 px-4 border border-blue-500 rounded-full">
+                    Explore Community
+                </button>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center">
+                    Polity <span className="ml-1 text-white">▼</span>
+                </button>
                 <a href="#contact"><img src=".\images\Call Chat.png" alt="Call" className="w-6 h-6" /></a>
-            </nav>
+            </div>
         </div>
     );
 };
